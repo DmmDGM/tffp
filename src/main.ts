@@ -38,7 +38,7 @@ try {
 						continue;
 					}
 					const product = match[0] * match[1];
-					if(product.toString().slice(Number(-digits - 1n)) !== inputString.slice(Number(-digits - 1n))) {
+					if(product.toString().padStart(Number(digits + 1n), "0").slice(Number(-digits - 1n)) !== inputString.slice(Number(-digits - 1n))) {
 						continue;
 					}
 					if(product > inputBigInt) {

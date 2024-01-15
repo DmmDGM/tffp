@@ -27,7 +27,7 @@ try {
 	for(let digits = 0n; digits < BigInt(inputString.length); digits += 1n) {
 		// Prints status
 		console.log(chalk.yellow(`Finding matches at ${digits + 1n} digit(s)`));
-		
+
 		// Loops through all possible solutions
 		for(let index = 0; index < solutions.length; index++) {
 			const solution = solutions[index];
@@ -38,7 +38,7 @@ try {
 						continue;
 					}
 					const product = match[0] * match[1];
-					if(product.toString().slice(Number(-digits - 1n)) !== inputString.slice(Number(-digits - 1n))) {
+					if(product.toString().padStart(Number(digits + 1n), "0").slice(Number(-digits - 1n)) !== inputString.slice(Number(-digits - 1n))) {
 						continue;
 					}
 					if(product > inputBigInt) {
