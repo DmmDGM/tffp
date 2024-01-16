@@ -77,15 +77,15 @@ try {
 		}
 	}
 
+	// Prints time
+	console.log(chalk.green(`Time processed: ${Date.now() - start}ms`));
+
 	// Prints status
 	console.log(chalk.green(`${outputs.length} match(es) passed`)); 
 	for(let index = 0; index < outputs.length; index++) {
 		const output = outputs[index];
 		console.log(chalk.cyan(`Match: [ ${output[0]}, ${output[1]} ]`));
 	}
-
-	// Prints time
-	console.log(chalk.green(`Time processed: ${Date.now() - start}ms`));
 	
 	// Exits
 	process.exit(0);
