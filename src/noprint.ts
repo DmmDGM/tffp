@@ -10,13 +10,14 @@ const rlInterface = nodeReadline.createInterface({
 
 // Initiates process
 try {
-	// Fetches timestamp
-	const start = Date.now();
-
+	
 	// Parses input
 	const inputBigInt = BigInt(await question("Input: "));
 	if(inputBigInt < 0) throw new SyntaxError("Cannot factorize a negative BigInt");
 	const inputString = inputBigInt.toString();
+	
+	// Fetches timestamp
+	const start = Date.now();
 
 	// Creates caches
 	const factors = new Set<string>();
